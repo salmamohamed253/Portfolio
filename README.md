@@ -2,7 +2,7 @@
 
 Personal portfolio for **Salma Mohamed Salem**: Application Support Engineer, full-stack developer and applied AI engineer based in Qatar.
 
-**Live site:** https://salmamohamed253.github.io/Portfolio/ (after GitHub Pages is enabled — see [Deployment](#deployment))
+**Live site:** https://salmamohamed253.github.io/Portfolio/
 
 The site presents professional, academic and independent projects as structured case studies — problem, solution, contribution, architecture, engineering decisions and limitations — alongside experience, skills and education taken from the CV.
 
@@ -82,38 +82,6 @@ The dev server shows a banner and highlights every **To confirm** placeholder, a
 | `npm run lint` | Lint with oxlint |
 | `npm test` | Run unit tests (Vitest) |
 | `npm run check` | Lint + test + build — the same steps CI runs |
-
----
-
-## Editing content
-
-### Add a project
-
-Append an object to `src/data/projects.ts`. TypeScript will tell you which fields are required.
-
-```ts
-{
-  slug: 'my-project',                 // URL: #/projects/my-project
-  title: 'My Project',
-  tagline: 'One line under the title.',
-  summary: 'Two sentences for the project card.',
-  category: 'independent',            // 'professional' | 'academic' | 'independent'
-  status: 'in-progress',              // 'completed' | 'in-progress' | 'prototype' (optional)
-  featured: 5,                        // optional — homepage position
-  stack: ['Go', pending('Database — confirm')],
-  problem: ['…'],
-  solution: ['…'],
-  contribution: ['…'],
-  diagrams: [{ kind: 'flow', title: 'Pipeline', stages: [{ label: 'Input' }, { label: 'Output' }] }],
-  decisions: [{ title: 'Why X', body: '…' }],
-  planned: ['Shown under “Planned scope” until built'],
-  links: [{ label: 'Source code', href: 'https://github.com/…', kind: 'repo' }],
-}
-```
-
-- **Unconfirmed detail?** Wrap it: `pending('Your question or placeholder')`. Replace it with a plain string once confirmed.
-- **Not ready to publish?** Set `draft: true`. The project then appears only in `npm run dev`.
-- **Homepage order** comes from `featured`. Keep it to four projects; a test enforces this.
 
 ### Update the CV
 
