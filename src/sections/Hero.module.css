@@ -1,0 +1,135 @@
+.hero {
+  padding-block: clamp(3.5rem, 2rem + 7vw, 7.5rem) var(--space-9);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: clamp(2.5rem, 1rem + 5vw, 6rem);
+  align-items: end;
+}
+
+.kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-6);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.name {
+  color: var(--text);
+}
+
+.roles {
+  color: var(--text-faint);
+}
+
+.title {
+  font-size: var(--text-display);
+  line-height: 1.06;
+  letter-spacing: -0.028em;
+  max-width: 18ch;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.lede {
+  margin-top: var(--space-6);
+  max-width: 58ch;
+  font-size: var(--text-md);
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-7);
+}
+
+.profiles {
+  display: flex;
+  gap: var(--space-5);
+  margin-top: var(--space-5);
+  list-style: none;
+}
+
+.profiles a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 32px;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.profiles a:hover {
+  color: var(--text);
+}
+
+.focus {
+  border-left: 1px solid var(--line);
+  padding-left: clamp(1.25rem, 0.5rem + 2vw, 2.5rem);
+}
+
+.focusLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: var(--space-5);
+}
+
+.focusList {
+  list-style: none;
+  display: grid;
+  gap: var(--space-5);
+}
+
+.focusList li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: var(--space-2);
+}
+
+.focusIndex {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--accent);
+  padding-top: 0.2rem;
+}
+
+.focusTitle {
+  font-size: var(--text-base);
+  font-weight: 500;
+  letter-spacing: 0;
+  margin-bottom: var(--space-1);
+}
+
+.focusBody {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .focus {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding-left: 0;
+    padding-top: var(--space-6);
+  }
+}

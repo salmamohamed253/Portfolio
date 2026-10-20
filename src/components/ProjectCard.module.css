@@ -1,0 +1,129 @@
+.card {
+  position: relative;
+  display: grid;
+  transition:
+    background-color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease);
+}
+
+.body {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+
+.link {
+  text-decoration: none;
+}
+
+/* Stretch the title link over the whole card. */
+.link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.link:focus-visible {
+  outline: none;
+}
+
+.card:has(.link:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.context {
+  font-size: var(--text-sm);
+  color: var(--text-faint);
+  margin-top: calc(var(--space-2) * -1);
+}
+
+.summary {
+  color: var(--text-muted);
+  max-width: 64ch;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--text-faint);
+  transition: color var(--duration) var(--ease);
+}
+
+.cta svg {
+  transition: transform var(--duration) var(--ease);
+}
+
+.card:hover .cta {
+  color: var(--accent);
+}
+
+.card:hover .cta svg {
+  transform: translate(2px, -2px);
+}
+
+/* Feature: full-width editorial row */
+.feature {
+  grid-template-columns: 4rem minmax(0, 1fr) auto;
+  gap: var(--space-5);
+  padding: var(--space-6) var(--space-4);
+  margin-inline: calc(var(--space-4) * -1);
+  border-top: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.feature:hover {
+  background: var(--surface);
+}
+
+.feature .title {
+  font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.625rem);
+}
+
+.feature .cta {
+  align-self: start;
+  padding-top: var(--space-1);
+}
+
+.index {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-faint);
+  padding-top: 0.1rem;
+}
+
+@media (max-width: 640px) {
+  .feature {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    padding-block: var(--space-5);
+  }
+
+  .feature .cta {
+    padding-top: 0;
+  }
+}
+
+/* Tile: catalogue grid */
+.tile {
+  grid-template-rows: 1fr auto;
+  gap: var(--space-5);
+  padding: var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.tile:hover {
+  border-color: var(--line-strong);
+  background: var(--surface-raised);
+}

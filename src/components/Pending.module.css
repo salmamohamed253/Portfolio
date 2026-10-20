@@ -1,0 +1,97 @@
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.block,
+.inline {
+  border: 1px dashed var(--accent-line);
+  background: var(--accent-soft);
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+}
+
+.block {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+}
+
+.inline {
+  display: inline-block;
+  padding: 0 var(--space-2);
+}
+
+.banner {
+  border-bottom: 1px dashed var(--accent-line);
+  background: var(--accent-soft);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  padding: var(--space-2) var(--gutter);
+  text-align: center;
+}
+
+.banner code {
+  font-family: var(--font-mono);
+  color: var(--text);
+}
+
+.prose {
+  display: grid;
+  gap: var(--space-4);
+  color: var(--text-muted);
+  max-width: 68ch;
+}
+
+.list {
+  display: grid;
+  gap: var(--space-2);
+  list-style: none;
+  color: var(--text-muted);
+  max-width: 68ch;
+}
+
+.list > li {
+  position: relative;
+  padding-left: var(--space-5);
+}
+
+.list > li::before {
+  content: '';
+  position: absolute;
+  left: 0.25rem;
+  top: 0.8em;
+  width: 0.5rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+.list > li.pendingItem::before {
+  display: none;
+}
+
+.list > li.pendingItem {
+  padding-left: 0;
+}
+
+.titled {
+  display: grid;
+  gap: var(--space-5);
+  max-width: 68ch;
+}
+
+.titledItem p {
+  color: var(--text-muted);
+}
+
+.titledHeading {
+  font-size: var(--text-base);
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+  color: var(--text);
+  letter-spacing: 0;
+}
