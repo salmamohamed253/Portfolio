@@ -93,8 +93,9 @@ Replace `public/Salma_Mohamed_Salem_CV.pdf` and keep the file name, or change `c
 
 The site deploys to GitHub Pages through GitHub Actions (`.github/workflows/deploy.yml`):
 
-- **Every push to `main`:** lint, test, build, then deploy.
-- **Pull requests:** lint, test and build only. Nothing is deployed.
+- **Triggers:** every push to `main`, or manually from **Actions → Deploy to GitHub Pages → Run workflow**.
+- **Steps:** install (`npm ci`, or `npm install` if there is no lockfile), lint, test, `npm run build`, upload `dist/` as the Pages artifact, deploy.
+- Only one deployment runs at a time. This is the only workflow that deploys to Pages; don't add GitHub's "Static HTML" starter, because it would publish the unbuilt source.
 
 ### One-time setup
 
@@ -105,10 +106,13 @@ The site deploys to GitHub Pages through GitHub Actions (`.github/workflows/depl
 
 ### Base path
 
-GitHub Pages serves project sites from `/<repository-name>/`, and the path is case-sensitive. `vite.config.ts` therefore sets `base: '/Portfolio/'`.
+GitHub Pages serves project sites from `/<repository-name>/`, and the path is case-sensitive. `resolveBase()` in `vite.config.ts` picks the base path:
 
-- If you rename the repository, update `base` in `vite.config.ts` and the URLs in `index.html`.
-- For a custom domain or a `<username>.github.io` repository, build with `BASE_PATH=/`.
+1. `BASE_PATH`, if set. Use `BASE_PATH=/` for a custom domain.
+2. Otherwise, in GitHub Actions, the repository name: `/Portfolio/`, or `/` for a `<username>.github.io` repository.
+3. Otherwise, `/Portfolio/` for local builds.
+
+If you rename the repository, also update the canonical and `og:url` URLs in `index.html`.
 
 ---
 
