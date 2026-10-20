@@ -1,0 +1,7 @@
+.list {
+  border-bottom: 1px solid var(--line);
+}
+
+.more {
+  margin-top: var(--space-6);
+}

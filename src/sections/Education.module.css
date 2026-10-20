@@ -1,0 +1,94 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: clamp(2rem, 1rem + 4vw, 5rem);
+}
+
+.period {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-faint);
+}
+
+.title {
+  margin-top: var(--space-2);
+  font-size: var(--text-lg);
+}
+
+.institution {
+  margin-top: var(--space-1);
+  color: var(--accent);
+}
+
+.label {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.grid > div:last-child .label {
+  margin-top: 0;
+}
+
+.modules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+}
+
+.modules li {
+  padding: 0.15rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.note {
+  margin-top: var(--space-5);
+  max-width: 66ch;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.note a:hover {
+  color: var(--accent);
+}
+
+.foundation {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--text-faint);
+}
+
+.achievements {
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.achievements li {
+  display: grid;
+  gap: 0.1rem;
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--line);
+}
+
+.achievementTitle {
+  color: var(--text);
+}
+
+.issuer {
+  font-size: var(--text-sm);
+  color: var(--text-faint);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

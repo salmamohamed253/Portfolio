@@ -1,0 +1,138 @@
+/* Faint blueprint grid, kept very subtle. */
+.figure {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  overflow: hidden;
+  background:
+    linear-gradient(rgb(255 255 255 / 0.025) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, rgb(255 255 255 / 0.025) 1px, transparent 1px) 0 0 / 24px 24px,
+    var(--surface);
+}
+
+.header {
+  display: grid;
+  gap: var(--space-1);
+  margin-bottom: var(--space-5);
+}
+
+.title {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.caption {
+  font-size: var(--text-sm);
+  color: var(--text-faint);
+}
+
+/* Flow: vertical rail */
+.flow {
+  list-style: none;
+  display: grid;
+  gap: var(--space-4);
+  position: relative;
+}
+
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-3);
+}
+
+/* Connector between steps */
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 1.05rem;
+  top: 1.9rem;
+  bottom: calc(var(--space-4) * -1);
+  width: 1px;
+  background: var(--line-strong);
+}
+
+.stepIndex {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 1.75rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  position: relative;
+  z-index: 1;
+}
+
+.node {
+  display: grid;
+  gap: 0.15rem;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+}
+
+.nodeLabel {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text);
+}
+
+.nodeDetail {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.branch {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-sm);
+}
+
+.branch .node {
+  border-color: var(--accent-line);
+}
+
+.pending {
+  border-style: dashed;
+  border-color: var(--accent-line);
+  background: var(--accent-soft);
+}
+
+/* Tiers: narrowing bars */
+.tiers {
+  list-style: none;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.tier {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  min-width: 11rem;
+  padding: var(--space-3);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+}
+
+.tierLevel {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+}

@@ -1,0 +1,37 @@
+.heading {
+  margin-bottom: var(--space-7);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.index {
+  color: var(--accent);
+}
+
+.rule {
+  width: 24px;
+  height: 1px;
+  background: var(--line-strong);
+}
+
+.title {
+  font-size: var(--text-xl);
+  max-width: 24ch;
+}
+
+.intro {
+  margin-top: var(--space-4);
+  max-width: 62ch;
+  color: var(--text-muted);
+  font-size: var(--text-md);
+}
